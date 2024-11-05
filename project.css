@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Events Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #eventBox {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin: 50px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="eventBox">Hover, click, or interact with me!</div>
+<div id="output"></div>
+
+<script>
+$(document).ready(function() {
+    // Click event
+    $("#eventBox").click(function() {
+        $("#output").text("Clicked!");
+    });
+
+    // Double-click event
+    $("#eventBox").dblclick(function() {
+        $("#output").text("Double-clicked!");
+    });
+
+    // Mouse enter event
+    $("#eventBox").mouseenter(function() {
+        $("#output").text("Mouse entered!");
+    });
+
+    // Mouse leave event
+    $("#eventBox").mouseleave(function() {
+        $("#output").text("Mouse left!");
+    });
+
+    // Mouse down event
+    $("#eventBox").mousedown(function() {
+        $("#output").text("Mouse button down!");
+    });
+
+    // Mouse up event
+    $("#eventBox").mouseup(function() {
+        $("#output").text("Mouse button released!");
+    });
+
+    // Hover event (combines mouseenter and mouseleave)
+    $("#eventBox").hover(
+        function() { $("#output").text("Hovering!"); },
+        function() { $("#output").text("No longer hovering!"); }
+    );
+});
+</script>
+
+</body>
+</html>
